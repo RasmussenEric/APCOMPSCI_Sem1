@@ -19,6 +19,12 @@ public class Lab_02
 		System.out.println(address);
 		System.out.println(City);
 		System.out.println(zip);
-	
+		
+		int w = 5;
+		int l = 8;
+		int h = 4;
+		
+		System.out.println("The surface area of your rectangular prism is " + 2*(w*l)+(l*h)+(h*w));
+		
 	}
 }
