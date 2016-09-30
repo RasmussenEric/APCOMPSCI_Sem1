@@ -5,7 +5,7 @@ public class Lab_02
 		int num1 = 2;
 		int num2 = 4;
 		
-		System.out.println(num1 + " multiplied by " + num2 + " is " + num1 * num2);
+		System.out.println(num1 + " multiplied by " + num2 + " is " + num1 * num2 + "\n");
 		
 		String name;
 		name = "Eric Rasmussen";
@@ -14,11 +14,11 @@ public class Lab_02
 		String City;
 		City = "San Diego";
 		String zip;
-		zip = "92130";
+		zip = "CA 92130";
+		
 		System.out.println(name);
 		System.out.println(address);
-		System.out.println(City);
-		System.out.println(zip);
+		System.out.println(City + ", " + zip + "\n");
 		
 		double w = 5;
 		double l = 8;
