@@ -4,7 +4,7 @@ public class Discount
 	public static void main(String[]args)
 	{
 		Scanner kb = new Scanner(System.in);
-		Discount form = new Discount();
+		
 		
 		System.out.println("Enter the price of your first item:");
 		double item1 = kb.nextDouble();
@@ -38,19 +38,19 @@ public class Discount
 		String name7 = "Discount:";
 		String name8 = "Total:";
 		
-		System.out.println("<<<<<<<<<<<Recipt>>>>>>>>>>>");
+		System.out.println("<<<<<<<<<<<Receipt>>>>>>>>>>");
 		
-		form.format(name1, item1);
-		form.format(name2, item2);
-		form.format(name3, item3);
-		form.format(name4, item4);
+		format(name1, item1);
+		format(name2, item2);
+		format(name3, item3);
+		format(name4, item4);
 		
 		System.out.println("\n");
 		
-		form.format(name5, item5);
-		form.format(name6, item6);
-		form.format(name7, item7);
-		form.format(name8, item8);
+		format(name5, item5);
+		format(name6, item6);
+		format(name7, item7);
+		format(name8, item8);
 		
 		System.out.println("\n__________________________");
 		System.out.println("Thank you for your support");
@@ -73,6 +73,6 @@ public class Discount
 	
 	public static void format(String name, double item)
 	{
-		System.out.printf("\n%12s %10.2f", name, item);
+		System.out.printf("\n%18s %10.2f", name + "......", item);
 	}
 }
