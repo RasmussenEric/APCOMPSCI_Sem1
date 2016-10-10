@@ -23,20 +23,20 @@ public class Discount
 		double discount = discount(sub);
 		double total = (sub + tax) - discount;
 		
-		double total1 = sub;
-		double total2 = tax;
-		double total3 = discount;
-		double total4 = total;
-		
-		String desc1 = "Subtotal:";
-		String desc2 = "Tax:";
-		String desc3 = "Discount:";
-		String desc4 = "Total:";
+		double item5 = sub;
+		double item6 = tax;
+		double item7 = discount;
+		double item8 = total;
 		
 		String name1 = "Item one:";
 		String name2 = "Item two:";
 		String name3 = "Item three:";
 		String name4 = "Item four:";
+		
+		String name5 = "Subtotal:";
+		String name6 = "Tax:";
+		String name7 = "Discount:";
+		String name8 = "Total:";
 		
 		System.out.println("<<<<<<<<<<<Recipt>>>>>>>>>>>");
 		
@@ -47,10 +47,10 @@ public class Discount
 		
 		System.out.println("\n");
 		
-		form.format2(desc1, total1);
-		form.format2(desc2, total2);
-		form.format2(desc3, total3);
-		form.format2(desc4, total4);
+		form.format(name5, item5);
+		form.format(name6, item6);
+		form.format(name7, item7);
+		form.format(name8, item8);
 		
 		System.out.println("\n__________________________");
 		System.out.println("Thank you for your support");
@@ -74,10 +74,5 @@ public class Discount
 	public static void format(String name, double item)
 	{
 		System.out.printf("\n%12s %10.2f", name, item);
-	}
-	
-	public static void format2(String desc, double total)
-	{
-		System.out.printf("\n%12s %10.2f",desc, total);
 	}
 }
