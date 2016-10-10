@@ -12,28 +12,27 @@ public class Dice
 		
 		System.out.println("You rolled a " + player);
 		System.out.println("Your opponent rolled a " + computer);
-		System.out.println("The winner is " + winner + "!");
+		System.out.println(winner + " wins!");
 		
 
 	}
 	
 	public static String rollDice(int player, int computer)
 	{
-		boolean win = (player >= computer);
-		String outcome
-		if (win)
+		String winner = "";
+		if (player >= computer)
 		{
-			
+			winner = "Player";
 			
 		}
 		
-		if (!win)
+		if (player<computer)
 		{
-		
+			winner = "Computer";
 		
 		}
 		
-		return outcome;
+		return winner;
 	}
 
 }
