@@ -5,7 +5,6 @@ public class Discount
 	{
 		Scanner kb = new Scanner(System.in);
 		
-		
 		System.out.println("Enter the price of your first item:");
 		double item1 = kb.nextDouble();
 		
