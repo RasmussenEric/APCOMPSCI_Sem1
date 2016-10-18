@@ -11,13 +11,13 @@ public class Password
 		passCheck();
 	}
 	
-	public static void passCheck();
+	public static void passCheck()
 	{
 		Scanner kb = new Scanner(System.in);
 		System.out.println("Enter your username.");
 		String guess1 = kb.next();
 		
-		System.out.println("Enter your username.");
+		System.out.println("Enter your password.");
 		String guess2 = kb.next();
 		
 		if(guess1.equals(username))
@@ -37,11 +37,11 @@ public class Password
 		{
 			if(guess2.equals(password))
 			{
-				System.out.println("Incorret Username");
+				System.out.println("Incorrect Username!");
 			}
 			else
 			{
-				System.out.println("Incorrect Username and Password.");
+				System.out.println("Incorrect Username and Password!");
 			}
 			
 			
