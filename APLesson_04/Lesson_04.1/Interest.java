@@ -22,7 +22,7 @@ public class Interest
 		
 		double payment = calculate.Math(r, P, n, t);
 		
-		System.out.printf("Your total monthly payment is %10.2f\n", payment);
+		System.out.printf("Your total monthly payment is %.2f\n", payment);
 		
 	}
 	

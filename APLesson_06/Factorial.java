@@ -8,10 +8,12 @@ public class Factorial
 		double num = kb.nextDouble();
 		System.out.println("\n");
 		double x = 1;
-		double factorial = 1
-		for(x = 1; x<num; x++)
+		double factorial = 1;
+		for(x = 1; x<=num; x++)
 		{
 			System.out.println(factorial*x);
+			
+			
 		}
 	}
 }

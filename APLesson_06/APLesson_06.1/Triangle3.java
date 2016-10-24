@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class Triangle
+public class Triangle3
 {
 	public static void main(String[]args)
 	{
@@ -8,9 +8,11 @@ public class Triangle
 		String word = kb.nextLine();
 		int y = word.length();
 		
-		for(int x = y; x >= 0; x--)
+		System.out.println(word.substring(0, y));
+		
+		for(int x = 7;x > -1; x--)
 		{
-			System.out.println(word.substring(0, x));
+			System.out.println(word.substring(x, y));
 		}
 	}
 }
