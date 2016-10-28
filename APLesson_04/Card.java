@@ -32,13 +32,13 @@ public class Card
 		
 		System.out.println("\n***********************************");
 		form.format("*  " + line1);
-		form.format("*       " + line2);
-		form.format("*       " + line3);
+		form.format("\n*       " + line2);
+		form.format("\n*       " + line3);
 		System.out.println("\n***********************************");
 	}
 	public void format(String line)
 	{
-		System.out.printf("\n%35s", line + " *");
+		System.out.printf("%35s", line + " *");
 	}
 }
 

@@ -28,11 +28,11 @@ public class Interest
 	
 	public double Math(double r, double P, double n, double t)
 	{
-		double x = (1 + (r/n));
-		double e = n * t;
-		double i = Math.pow(x, e);
+		double i = Math.pow((1 +(r/n)), (n * t));
 		double y = P * i;
-		return y / 12;
+		return y / (t * 12);
+		
+		
 	}
 }
 
