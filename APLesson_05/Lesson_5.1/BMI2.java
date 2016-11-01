@@ -18,7 +18,7 @@ public class BMI2
 		calcBMI();
 		
 		System.out.println("Your bmi is " + bmi);
-		System.out.println("You are considered to be " + condition);
+		System.out.println("You are " + condition);
 	}
 	public static void calcBMI()
 	{

@@ -31,7 +31,6 @@ public class Password
 				System.out.println("Incorrect Password!");
 			}
 			
-			
 		}	
 		else
 		{

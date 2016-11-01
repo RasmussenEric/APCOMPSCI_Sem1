@@ -31,19 +31,21 @@ public class Recipt
 		System.out.println("Please enter the price:");
 		double price3 = keyboard.nextDouble();
 		
+		
+		
 		double price4 = (price1 + price2 + price3);
 		double price5 = (price4 * .08);
 		double price6 = (price4 + price5);
 		
-		String name4 = "*        Subtotal:";
-		String name5 = "*             Tax:";
-		String name6 = "*           Total:";
+		String name4 = "Subtotal:";
+		String name5 = "Tax:";
+		String name6 = "Total:";
 		
 		System.out.println("\n<<<<<<<<<<<<___Receipt___>>>>>>>>>>>>");
 		
-		form.recipt("*  " + name1, price1);
-		form.recipt("*     " + name2, price2);
-		form.recipt("*             " + name3, price3);
+		form.recipt(name1, price1);
+		form.recipt(name2, price2);
+		form.recipt(name3, price3);
 		
 		System.out.println("\n");
 		
@@ -51,13 +53,13 @@ public class Recipt
 		form.recipt(name5, price5);
 		form.recipt(name6, price6);
 		
-		System.out.println("\n______________________________");
-		System.out.println("* Thank you for your support *");
+		System.out.println("\n_______________________________________");
+		System.out.println("      * Thank you for your support *");
 	}
 	
 	public void recipt(String name, double price)
 	{
-		System.out.printf("\n%18s  %4.2f", name + ".......",price);
+		System.out.printf("\n* %24s  %4.2f", name + " .......",price);
 		
 	}	
 }

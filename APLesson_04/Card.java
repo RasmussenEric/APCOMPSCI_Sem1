@@ -5,40 +5,35 @@ public class Card
 	public static void main(String[]args)
 	{
 		Scanner kb = new Scanner(System.in);
-		
 		Card form = new Card();
 		
 		System.out.println("Enter your first name:");
-		String left2 = kb.nextLine();
+		String name1 = kb.nextLine();
 		
 		System.out.println("Enter your last name:");
-		String right2 = kb.nextLine();
+		String name2 = kb.nextLine();
 		
 		System.out.println("Enter your title:");
-		String left3 = kb.nextLine();
+		String title = kb.nextLine();
 		
 		System.out.println("Enter the school name:");
-		String left1 = kb.nextLine();
+		String school = kb.nextLine();
 		
 		System.out.println("Enter the school year:");
-		String right1 = kb.nextLine();
+		String year = kb.nextLine();
 		
 		System.out.println("Enter your subject:");
-		String right3 = kb.nextLine();
-		
-		String line1 = left1 + "           " + right1;
-		String line2 = left2 + "         " + right2;
-		String line3 = left3 + "  " + right3;
+		String subject = kb.nextLine();
 		
 		System.out.println("\n***********************************");
-		form.format("*  " + line1);
-		form.format("\n*       " + line2);
-		form.format("\n*       " + line3);
-		System.out.println("\n***********************************");
+		form.format(school, year);
+		form.format(name1, name2);
+		form.format(title, subject);
+		System.out.println("***********************************");
 	}
-	public void format(String line)
+	public void format(String one, String two)
 	{
-		System.out.printf("%35s", line + " *");
+		System.out.printf("* %13s\t %16s *\n", one, two);
 	}
 }
 
