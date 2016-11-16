@@ -26,9 +26,9 @@ public class ReverseWord
 	}
 	public static void reverse(String[] names)
 	{
-		for(int i = 5; i < names.length; i--)
+		for(int i = 4; i >= 0; i--)
 		{
-			System.out.println(name);
+			System.out.println(names[i]);
 		}
 		
 	}
