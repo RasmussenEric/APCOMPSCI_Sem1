@@ -29,12 +29,12 @@ public class KeepComposites
 		for(int i = 0; i < nums.size(); i++)
 		{
 			
-			if(gFactor(nums.indexOf(i)) == 0)
+			if(gFactor(nums.get(i)) == 0)
 			{
-				nums.remove(nums.indexOf(i));
-				//i--;
+				nums.remove(nums.get(i));
+			
 			}
-			//System.out.println(nums.indexOf(i));
+			
 		}
 		
 		System.out.println(nums);
