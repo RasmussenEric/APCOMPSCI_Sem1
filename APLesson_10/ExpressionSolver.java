@@ -3,15 +3,17 @@ import java.util.ArrayList;
 import java.util.Arrays;
 public class ExpressionSolver
 {
+	static String input;
+	
 	public static void main(String[]args)
 	{
 		Scanner kb = new Scanner(System.in);
 		System.out.println("Enter an equation:");
-		String input = kb.nextLine();
-		System.out.println(doEquation(input));
+		input = kb.nextLine();
+		System.out.println(doEquation());
 		
 	}
-	public static int doEquation(String input);
+	public static ArrayList<String> doEquation()
 	{
 		ArrayList<String> exp = new ArrayList<>(Arrays.asList(input.split(" ")));
 		
@@ -20,16 +22,19 @@ public class ExpressionSolver
 		{
 			if((exp.get(i).equals("*")) || (exp.get(i).equals("/")))
 			{
-				if(exp.get(i) == "*")
+				if(exp.get(i).equals("*"))
 				{
-					exp.set(i, (exp.parseInt(exp.get(i-1)) * exp.parseInt(exp.get(i+1))));
+					exp.set(i, "" + ((Integer.parseInt(exp.get(i-1))) * (Integer.parseInt(exp.get(i+1)))));
 				}
 				else
 				{
-					exp.set(i, (exp.parseInt(exp.get(i-1)) / exp.parseInt(exp.get(i+1))));
+					exp.set(i, "" + ((Integer.parseInt(exp.get(i-1))) / (Integer.parseInt(exp.get(i+1)))));
 				}
+				
 				exp.remove(i-1);
 				exp.remove(i);
+				
+				
 			}
 			
 			i++;
@@ -37,20 +42,27 @@ public class ExpressionSolver
 		
 			
 		}
+		i = 0;
 		while(i < exp.size())
 		{
 			if(exp.get(i).equals("+") || exp.get(i).equals("-"))
 			{
-				if(exp.get(i) == "+")
+				if(exp.get(i).equals("+"))
 				{
-					exp.set(i, exp.parseInt(exp.get(i-1)) + exp.parseInt(exp.get(i+1)));
+					exp.set(i, "" + ((Integer.parseInt(exp.get(i-1))) + (Integer.parseInt(exp.get(i+1)))));
 				}
 				else
 				{
-					exp.set(i, exp.parseInt(exp.get(i-1)) - exp.parseInt(exp.get(i+1)));
+					exp.set(i, "" + ((Integer.parseInt(exp.get(i-1))) - (Integer.parseInt(exp.get(i+1)))));
 				}
+				
+				exp.remove(i-1);
+				exp.remove(i);
+				
 			}
 			
+			//exp.remove(i-1);
+			//exp.remove(i);
 			i++;
 		}
 		

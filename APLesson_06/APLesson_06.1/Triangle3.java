@@ -10,7 +10,7 @@ public class Triangle3
 		
 		System.out.println(word.substring(0, y));
 		
-		for(int x = 7;x > -1; x--)
+		for(int x = word.length();x >= 0; x--)
 		{
 			System.out.println(word.substring(x, y));
 		}

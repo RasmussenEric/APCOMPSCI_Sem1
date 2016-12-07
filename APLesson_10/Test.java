@@ -43,7 +43,7 @@ public class Test
 				}
 				else
 				{
-					exp.set(i, "" + (Integer.parseInt(exp.get(i-1))) - (Integer.parseInt(exp.get(i+1))));
+					exp.set(i, "" + ((Integer.parseInt(exp.get(i-1))) - (Integer.parseInt(exp.get(i+1)))));
 				}
 			}
 			
