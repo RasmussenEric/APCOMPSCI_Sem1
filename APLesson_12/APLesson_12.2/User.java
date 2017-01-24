@@ -55,14 +55,17 @@ public class User
 		
 		if(response.equals("n") || response.equals("no"))
 		{
-			User pH = new User("Professor", "Handsome");
+			User pH = new User("Professor", "Handsome", "NA");
 			System.out.println(pH);
 			System.out.println();
 			
 		}
 		if(response.equals("y") || response.equals("yes"))
 		{
-			User pH2 = new User("Professor", "Handsome", "profHandsizzle");
+			System.out.println("Enter your avatar name: ");
+			String ava = kb.nextLine();
+			
+			User pH2 = new User("Professor", "Handsome", ava);
 			System.out.println(pH2);
 			
 		}

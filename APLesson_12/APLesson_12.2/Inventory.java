@@ -14,13 +14,12 @@ public class Inventory
 		
 	}
 	
-	public Inventory(String M, String C)
+	public Inventory(String N, String M, String C)
 	{
-		Name = "GTX 1080";
+		Name = N;
 		Manufacturer = M;
 		Category = C;
 		UPC = (int)(Math.random() * 1000000000) + 1;
-		Price = 600;
 		
 	}
 	
@@ -46,7 +45,7 @@ public class Inventory
 	
 	public String toString()
 	{
-		return "Item Info... \nItem Name: " + Name + "\nManufacturer: " + Manufacturer + "\nCategory: " + Category + "\nUPC: " + UPC + "\nPrice :" + Price;
+		return "Item Info... \nItem Name: " + Name + "\nManufacturer: " + Manufacturer + "\nCategory: " + Category + "\nUPC: " + UPC + "\nPrice: " + Price;
 	}
 	
 	public static void main(String[]args)
@@ -58,14 +57,20 @@ public class Inventory
 		
 		if(response.equals("n") || response.equals("no"))
 		{
-			Inventory item = new Inventory("Nvidia", "Graphics Cards");
+			Inventory item = new Inventory("GTX 1080", "Nvidia", "NA");
 			System.out.println(item);
 			System.out.println();
 			
 		}
 		if(response.equals("y") || response.equals("yes"))
 		{
-			Inventory item2 = new Inventory("GTX 1060", "Nvidia", "Graphics Cards", 300);
+			System.out.println("Enter Category: ");
+			String cat = kb.nextLine();
+			
+			System.out.println("Enter Price: ");
+			int pri = kb.nextInt();
+			
+			Inventory item2 = new Inventory("GTX 1080", "Nvidia", cat, pri);
 			System.out.println(item2);
 			
 			
