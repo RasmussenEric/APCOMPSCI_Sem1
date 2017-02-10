@@ -1,41 +1,45 @@
-public class Toy{
-
+public abstract class Toy{
 	
 	private String name;
 	private int count;
 	
-	public Toy(){
+	public Toy()
+	{
 		this.name = "";
 		this.count = 1;
 		
 	}
 	
-	public Toy(String n){
+	public Toy(String n)
+	{
 		this.name = n;
 		this.count = 1;
 	}
 	
-	public getName(){
+	public String getName()
+	{
 		return name;
 	}
 	
-	public getCount(){
+	public int getCount()
+	{
 		return count;
 	}
 	
-	public setName(){
+	public void setName(String n)
+	{
 		name = n;
 	}
 	
-	public setCount(){
+	public void setCount(int c)
+	{
 		count = c;
 	}
 	
-	public abstract getType(){
-		
-	}
+	public abstract void getType();
 	
-	public toString(){
+	public String toString()
+	{
 		
 		return "" + name + "" + count;
 	}

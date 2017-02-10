@@ -1,45 +1,55 @@
 public class Car extends Toy{
 
-	
 	private String name;
 	private int count;
 	
-	public Car(){
+	Car c = new Car();
+	
+	public Car()
+	{
 		
 		super();
 	}
 	
-	public Car(String n){
+	public Car(String n)
+	{
 		
 		super();
 	}
 	
-	public getName(){
+	public String getName()
+	{
 	
 		return name;
 	}
 	
-	public getCount(){
+	public int getCount()
+	{
 		
 		return count;
 	}
 	
-	public setName(String n){
+	public void setName(String n)
+	{
 		
 		name = n;
 	}
 	
-	public setCount(int c){
+	public void setCount(int c)
+	{
 		
 		count = c;
 	}
 	
-	public getType(){
+	public String getType()
+	{
 		
 		return "Car";
 	}
 	
-	public toString(){
+	public String toString()
+	{
 		
-		return super.toString();
+		return "Car";
 	}
+}
