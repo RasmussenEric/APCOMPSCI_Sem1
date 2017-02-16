@@ -9,7 +9,7 @@ public class ToyStore
 	public ToyStore()
 	{
 	
-		//loadToys();
+		loadToys();
 	}
 	
 	public ToyStore(String list)
@@ -21,13 +21,13 @@ public class ToyStore
 	public void loadToys(String ts)
 	{
 		
-		ArrayList<String> toys = ts.split(", ");
+		ArrayList<String> toys = new ArrayList<String>(ts.split(", "));
 		
-		for(int i = 0; i < toys.length(); i++)
+		for(int i = 0; i < toys.size(); i++)
 		{
 			
-			String name = toys[i];
-			String type = toys[i + 1];
+			String name = toys.get(i);
+			String type = toys.get(i + 1);
 			
 			Toy temp = new Toy();
 			
@@ -50,21 +50,21 @@ public class ToyStore
 			else
 			{
 				
-				count += 1;
+				temp.getCount() = temp.getCount() + 1;
 			}
 		}	
 	}
 	
-	public String getThatToy(String nm)
+	public Object getThatToy(String nm)
 	{
 		
-		for(String t : toyList)
+		for(Toy t : toyList)
 		{
 			
-			if(t.name == nm)
+			if(t.getName() == nm)
 			{
 				
-				return toy;
+				return t;
 			}
 		
 			else
@@ -85,10 +85,15 @@ public class ToyStore
 		
 		for(String x : toyList)
 		{
-			if(max < test.getcount() || max == test.getcount() || name = test.getname())
+			if(max < test.getCount() || max == test.getCount())
 			{
 				
-				return Toy.name;
+				return Toy.getName();
+			}
+			if(name == test.getName())
+			{
+				
+				return Toy.getName();
 			}
 			
 		}
@@ -103,13 +108,13 @@ public class ToyStore
 		for(String y : toyList)
 		{
 			
-			if(Toy.type == "Car")
+			if(Toy.getType() == "Car")
 			{
 				
 				cars += 1;
 			}
 			
-			if(Toy.type == "AF")
+			if(Toy.getType() == "AF")
 			{
 				
 				figures += 1;

@@ -1,4 +1,5 @@
-public class AFigure extends Toy{
+public class AFigure extends Toy
+{
 
 	private String name;
 	private int count;

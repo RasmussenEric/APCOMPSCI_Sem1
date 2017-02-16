@@ -36,7 +36,7 @@ public abstract class Toy{
 		count = c;
 	}
 	
-	public abstract void getType();
+	public abstract String getType();
 	
 	public String toString()
 	{

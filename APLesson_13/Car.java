@@ -1,4 +1,5 @@
-public class Car extends Toy{
+public class Car extends Toy
+{
 
 	private String name;
 	private int count;
