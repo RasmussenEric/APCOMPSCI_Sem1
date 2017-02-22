@@ -4,7 +4,7 @@ public class Car extends Toy
 	private String name;
 	private int count;
 	
-	Car c = new Car();
+	//Car c = new Car();
 	
 	public Car()
 	{
@@ -15,7 +15,7 @@ public class Car extends Toy
 	public Car(String n)
 	{
 		
-		super();
+		super(n);
 	}
 	
 	public String getName()

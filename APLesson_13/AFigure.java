@@ -4,7 +4,7 @@ public class AFigure extends Toy
 	private String name;
 	private int count;
 	
-	AFigure af = new AFigure();
+	//AFigure af = new AFigure();
 	
 	public AFigure()
 	{

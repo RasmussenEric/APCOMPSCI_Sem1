@@ -1,4 +1,5 @@
-public abstract class Toy{
+public abstract class Toy
+{
 	
 	private String name;
 	private int count;
@@ -41,6 +42,6 @@ public abstract class Toy{
 	public String toString()
 	{
 		
-		return "" + name + "" + count;
+		return "" + name + "" + count + "";
 	}
 }

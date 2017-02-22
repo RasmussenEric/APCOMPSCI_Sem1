@@ -3,12 +3,14 @@ public class ToyRunner
 
 	public static void main(String[]args)
 	{
+		Toy af = new AFigure("G.I. Joe");
+		Toy c = new Car("Hotwheel");
 		
-		AFigure af = new AFigure();
-		Car c = new Car();
+		//AFigure af = new AFigure("G.I. Joe");
+		//Car c = new Car("Hotwheel");
 		
-		c.toString();
-		af.toString();
+		System.out.println(c.toString());
+		System.out.println(af.toString());
 		
 	
 	}

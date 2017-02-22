@@ -4,11 +4,10 @@ public class ToyStore
 {
 	
 	//ToyStore List = new ToyStore();
-	ArrayList<String> toyList = new ArrayList<String>();
+	ArrayList<Toy> toyList = new ArrayList<Toy>();
 	
 	public ToyStore()
 	{
-	
 		loadToys();
 	}
 	
@@ -29,7 +28,7 @@ public class ToyStore
 			String name = toys.get(i);
 			String type = toys.get(i + 1);
 			
-			Toy temp = new Toy();
+			Toy temp = getThatToy(name);
 			
 			if(getThatToy(name) == null)
 			{
@@ -66,7 +65,6 @@ public class ToyStore
 				
 				return t;
 			}
-		
 			else
 			{
 			
@@ -75,46 +73,46 @@ public class ToyStore
 		}
 	}
 	
-	public String getMostFrequentToy()
+	public String getMostfrequentToy()
 	{
-		Toy test = new Toy();
+		//Toy x = new Toy();
 		
 		String name;
 		
 		int max = Integer.MIN_VALUE;
 		
-		for(String x : toyList)
+		for(Toy x : toyList)
 		{
-			if(max < test.getCount() || max == test.getCount())
+			if(max < x.getCount() || max == x.getCount())
 			{
 				
-				return Toy.getName();
+				return x.getName();
 			}
-			if(name == test.getName())
+			if(name == x.getName())
 			{
 				
-				return Toy.getName();
+				return x.getName();
 			}
 			
 		}
 	}
 	
-	public String getMostFrequentType()
+	public String getMostxuentType()
 	{
 		
 		int cars = 0;
 		int figures = 0;
 		
-		for(String y : toyList)
+		for(Toy y : toyList)
 		{
 			
-			if(Toy.getType() == "Car")
+			if(y.getType() == "Car")
 			{
 				
 				cars += 1;
 			}
 			
-			if(Toy.getType() == "AF")
+			if(y.getType() == "AF")
 			{
 				
 				figures += 1;
@@ -141,7 +139,7 @@ public class ToyStore
 	public String toString()
 	{
 		
-		return toyList;
+		return "" + toyList;
 	}
 }	
 	

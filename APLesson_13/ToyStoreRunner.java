@@ -1,14 +1,15 @@
-public class ToyStoreRunner{
+public class ToyStoreRunner
+{
 	
 	public static void main(String[]args)
 	{
+		ToyStore test = new ToyStore("Hotwheel, Car, G.I.Joe, AF, PennyRacer, Car, Matchbox, Car, Star Wars, AF, Pullback, Car, Star Wars, AF");
+		System.out.println(test);
 		
-		ToyStore test = new ToyStore();
+		test.toString();
 		
-		ToyStore.toString();
-		
-		ToyStore.MostFrequentToy();
-		ToyStore.getMostFrequentType();
+		test.getMostFrequentToy();
+		test.getMostFrequentType();
 		
 		
 		
