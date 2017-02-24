@@ -6,9 +6,6 @@ public class ToyRunner
 		Toy af = new AFigure("G.I. Joe");
 		Toy c = new Car("Hotwheel");
 		
-		//AFigure af = new AFigure("G.I. Joe");
-		//Car c = new Car("Hotwheel");
-		
 		System.out.println(c.toString());
 		System.out.println(af.toString());
 		

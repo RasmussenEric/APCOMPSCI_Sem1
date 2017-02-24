@@ -6,9 +6,9 @@ public class ToyStore
 	//ToyStore List = new ToyStore();
 	ArrayList<Toy> toyList = new ArrayList<Toy>();
 	
-	public ToyStore()
+	//public ToyStore()
 	{
-		loadToys();
+		//loadToys();
 	}
 	
 	public ToyStore(String list)
@@ -28,7 +28,7 @@ public class ToyStore
 			String name = toys.get(i);
 			String type = toys.get(i + 1);
 			
-			Toy temp = getThatToy(name);
+			Toy temp = new ToyStore(getThatToy(name));
 			
 			if(getThatToy(name) == null)
 			{
