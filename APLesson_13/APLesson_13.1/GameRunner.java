@@ -12,6 +12,9 @@ public class GameRunner
 		System.out.println(test2);
 		System.out.println(test3);
 		
+		//test1.toString();
+		//test2.toString();
+		//test3.toString();
 		
 		
 	}

@@ -15,6 +15,12 @@ public class Advance extends Ticket
 		daysLeft = dl;
 	}
 	
+	public int getDaysLeft()
+	{
+		
+		return daysLeft;
+	}
+	
 	public int getPrice()
 	{
 		if(daysLeft >= 10)

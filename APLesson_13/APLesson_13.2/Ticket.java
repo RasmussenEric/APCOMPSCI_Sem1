@@ -20,6 +20,6 @@ public abstract class Ticket
 	public String toString()
 	{
 		
-		return "Serial #: " + getSerialNo() + "\nPrice: " + getPrice() + "\n"; 
+		return "Serial #: " + getSerialNo() + "\nPrice: " + getPrice() + " dollars\n"; 
 	}
 }

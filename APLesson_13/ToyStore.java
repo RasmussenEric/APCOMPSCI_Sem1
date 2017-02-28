@@ -3,12 +3,12 @@ import java.util.ArrayList;
 public class ToyStore
 {
 	
-	//ToyStore List = new ToyStore();
 	ArrayList<Toy> toyList = new ArrayList<Toy>();
 	
-	//public ToyStore()
+	public ToyStore()
 	{
-		//loadToys();
+		
+		loadToys();
 	}
 	
 	public ToyStore(String list)
@@ -28,7 +28,7 @@ public class ToyStore
 			String name = toys.get(i);
 			String type = toys.get(i + 1);
 			
-			Toy temp = new ToyStore(getThatToy(name));
+			Toy num = new ToyStore(getThatToy(name));
 			
 			if(getThatToy(name) == null)
 			{
@@ -49,7 +49,7 @@ public class ToyStore
 			else
 			{
 				
-				temp.getCount() = temp.getCount() + 1;
+				num.getCount() = num.getCount() + 1;
 			}
 		}	
 	}
@@ -73,7 +73,7 @@ public class ToyStore
 		}
 	}
 	
-	public String getMostfrequentToy()
+	public String getMostFrequentToy()
 	{
 		//Toy x = new Toy();
 		
@@ -97,7 +97,7 @@ public class ToyStore
 		}
 	}
 	
-	public String getMostxuentType()
+	public String getMostFrequentType()
 	{
 		
 		int cars = 0;
