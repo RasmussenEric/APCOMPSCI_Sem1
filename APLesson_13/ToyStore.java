@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class ToyStore
 {
@@ -19,8 +20,8 @@ public class ToyStore
 	
 	public void loadToys(String ts)
 	{
-		
-		ArrayList<String> toys = new ArrayList<String>(ts.split(", "));
+		String[] ar = ts.split(", ");
+		ArrayList<String> toys = new ArrayList<String>(Arrays.asList(ar));
 		
 		for(int i = 0; i < toys.size(); i++)
 		{
