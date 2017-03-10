@@ -1,27 +1,32 @@
-public class GMC implements Location
+public class GMC extends Car
 {
-	
+	//private int ID;
 	private double coordx;
 	private double coordy;
 	
 	public GMC()
 	{
 		
-		double coordx = 0;
-		double coordy = 0;
+		//ID = 0;
+		
+		coordx = 0;
+		coordy = 0;
 	}
 	
 	public GMC(int x, int y)
 	{
 		
-		double coordx = x;
-		double coordy = y;
+		//ID = (int)(Math.random() * 1000000) + 1;
+		
+		coordx = x;
+		coordy = y;
+		
 	}
 	
 	public int getID()
 	{
 		
-		return (int)(Math.random() * 1000000) + 1;
+		return super.getID();
 	}
 	
 	public void move(int x, int y)

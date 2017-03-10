@@ -1,12 +1,16 @@
-public class Toyota implements Location
+public class Toyota extends Car
 {
 	
-	private double[] location;
+	//private int ID;
+	private double[] location = new double[2];
 	private double coordx;
 	private double coordy;
 	
 	public Toyota()
 	{
+		
+		//ID = 0;
+		
 		coordx = 0;
 		coordy = 0;
 		
@@ -16,9 +20,12 @@ public class Toyota implements Location
 	
 	public Toyota(String sp)
 	{
+		
+		//ID = (int)(Math.random() * 1000000) + 1;
+		
 		String[] getsplit = sp.split(", ");
-		coordx = Integer.parseInt(getsplit[0]);
-		coordy = Integer.parseInt(getsplit[1]);
+		coordx = Double.parseDouble(getsplit[0]);
+		coordy = Double.parseDouble(getsplit[1]);
 		
 		location[0] = coordx;
 		location[1] = coordy;
@@ -27,7 +34,7 @@ public class Toyota implements Location
 	public int getID()
 	{
 		
-		return (int)(Math.random() * 1000000) + 1;
+		return super.getID();
 	}
 	
 	public void move(int x, int y)

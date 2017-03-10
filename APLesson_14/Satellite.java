@@ -8,8 +8,25 @@ public class Satellite
        locate.add(new Honda(honLoc));
        locate.add(new Toyota("8, 9"));
        locate.add(new GMC(3, 8));
-
-
+		
+		//Car mover1 = new Honda();
+		//Car mover2 = new Toyota();
+		//Car mover3 = new GMC();
+		
+		for(Location l : locate)
+		{
+			
+			double d1 = (int)(Math.random() * 100) + 1;
+			double d2 = (int)(Math.random() * 100) + 1;
+			
+			l.move(d1, d2);
+			
+			double[] location = l.getLoc();
+			
+			System.out.println("After " + l.getID() + " moved (" + d1 + ", " + d2 + ")");
+			System.out.println("New Location: (" + location[0] + ", " + location[1] + ")");
+		}
+		
        double[] home = {0, 0};
 
 
