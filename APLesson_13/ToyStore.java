@@ -6,12 +6,6 @@ public class ToyStore
 	
 	ArrayList<Toy> toyList = new ArrayList<Toy>();
 	
-	public ToyStore()
-	{
-		
-		loadToys();
-	}
-	
 	public ToyStore(String list)
 	{
 		
@@ -29,7 +23,8 @@ public class ToyStore
 			String name = toys.get(i);
 			String type = toys.get(i + 1);
 			
-			Toy num = new ToyStore(getThatToy(name));
+			
+			Toy num = new getThatToy(name);
 			
 			if(getThatToy(name) == null)
 			{
@@ -49,8 +44,9 @@ public class ToyStore
 			}
 			else
 			{
+				int count = num.getCount();
 				
-				num.getCount() = num.getCount() + 1;
+				count += 1;
 			}
 		}	
 	}
@@ -143,4 +139,3 @@ public class ToyStore
 		return "" + toyList;
 	}
 }	
-	
