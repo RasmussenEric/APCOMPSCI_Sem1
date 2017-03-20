@@ -5,7 +5,10 @@ public class ToyStore
 {
 	
 	ArrayList<Toy> toyList = new ArrayList<Toy>();
-	
+	public ToyStore()
+	{
+
+	}
 	public ToyStore(String list)
 	{
 		
@@ -16,15 +19,18 @@ public class ToyStore
 	{
 		String[] ar = ts.split(", ");
 		ArrayList<String> toys = new ArrayList<String>(Arrays.asList(ar));
+		System.out.println("Check1");
+		System.out.println(toys.size());
 		
-		for(int i = 0; i < toys.size(); i++)
+		
+		for(int i = 0; i < toys.size(); i =+ 1)
 		{
 			
 			String name = toys.get(i);
 			String type = toys.get(i + 1);
 			
 			
-			Toy num = new getThatToy(name);
+			Toy num = getThatToy(name);
 			
 			if(getThatToy(name) == null)
 			{
@@ -33,6 +39,7 @@ public class ToyStore
 				{
 					
 					toys.add("Car");
+				
 				}
 				
 				if(type.equals("AF"))
@@ -40,58 +47,59 @@ public class ToyStore
 					
 					toys.add("AF");
 				}
-				
+				System.out.println("Check loop");
 			}
 			else
 			{
-				int count = num.getCount();
-				
-				count += 1;
+				int c = num.getCount();
+			
+				c += 1;	
 			}
+			
+			
 		}	
 	}
 	
-	public Object getThatToy(String nm)
+	public Toy getThatToy(String nm)
 	{
 		
 		for(Toy t : toyList)
 		{
-			
 			if(t.getName() == nm)
 			{
-				
+				System.out.println("Check2");
 				return t;
 			}
-			else
-			{
 			
-				return null;
-			}
+			
 		}
+		System.out.println("Check2");
+		return null;
 	}
 	
 	public String getMostFrequentToy()
 	{
-		//Toy x = new Toy();
-		
-		String name;
+		String name = "";
 		
 		int max = Integer.MIN_VALUE;
 		
 		for(Toy x : toyList)
 		{
-			if(max < x.getCount() || max == x.getCount())
-			{
-				
-				return x.getName();
-			}
-			if(name == x.getName())
-			{
-				
-				return x.getName();
-			}
 			
+			if(max < x.getCount())
+			{
+				
+				max = x.getCount();
+				name = x.getName();
+				
+			}
+		
 		}
+		
+		System.out.println("Check3");
+		
+		return name;
+		
 	}
 	
 	public String getMostFrequentType()
@@ -119,19 +127,21 @@ public class ToyStore
 		
 		if(cars > figures)
 		{
+			System.out.println("Check4");
 			
 			return "Cars";
 		}
 		if(figures > cars)
 		{
+			System.out.println("Check4");
 			
 			return "Action Figures";
 		}
-		else
-		{
 		
-			return "Equal amounts of action figures and cars";
-		}
+		System.out.println("Check4");
+		
+		return "Equal amounts of action figures and cars";
+		
 	}
 	public String toString()
 	{
