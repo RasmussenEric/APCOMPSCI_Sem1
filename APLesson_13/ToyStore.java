@@ -5,10 +5,13 @@ public class ToyStore
 {
 	
 	ArrayList<Toy> toyList = new ArrayList<Toy>();
+	
 	public ToyStore()
 	{
-
+		
+		
 	}
+	
 	public ToyStore(String list)
 	{
 		
@@ -17,18 +20,18 @@ public class ToyStore
 	
 	public void loadToys(String ts)
 	{
-		String[] ar = ts.split(", ");
+		String[] ar = ts.split(",");
 		ArrayList<String> toys = new ArrayList<String>(Arrays.asList(ar));
-		System.out.println("Check1");
-		System.out.println(toys.size());
-		
-		
-		for(int i = 0; i < toys.size(); i =+ 1)
+		//System.out.println("Check1");
+		//System.out.println(toys.size());
+
+		for(int i = 0; i < (toys.size() - 1) ; i += 2)
 		{
 			
 			String name = toys.get(i);
 			String type = toys.get(i + 1);
 			
+			//System.out.println(type);
 			
 			Toy num = getThatToy(name);
 			
@@ -39,41 +42,57 @@ public class ToyStore
 				{
 					
 					toys.add("Car");
-				
+					System.out.println("Car");
+					
 				}
 				
 				if(type.equals("AF"))
 				{
-					
 					toys.add("AF");
+					System.out.println("AF");
+					
 				}
-				System.out.println("Check loop");
+				//System.out.println("Check loop");
 			}
 			else
 			{
 				int c = num.getCount();
 			
 				c += 1;	
+				
+				num.setCount(c);
 			}
 			
-			
+			//System.out.println("Done Loading");
 		}	
 	}
 	
 	public Toy getThatToy(String nm)
 	{
 		
+		String test = nm;
+		
+		//System.out.println(test);
+		
+		//System.out.println(toyList.size());
+		
 		for(Toy t : toyList)
 		{
-			if(t.getName() == nm)
+			
+			String Checker = t.getName();
+			System.out.println(Checker);
+			System.out.println(test);
+			
+			if(Checker == test)
 			{
-				System.out.println("Check2");
+				System.out.println("Check t");
 				return t;
 			}
 			
 			
 		}
-		System.out.println("Check2");
+		
+		//System.out.println("Check null");
 		return null;
 	}
 	
@@ -86,7 +105,9 @@ public class ToyStore
 		for(Toy x : toyList)
 		{
 			
-			if(max < x.getCount())
+			int checker = x.getCount();
+			
+			if(max < checker)
 			{
 				
 				max = x.getCount();
@@ -96,7 +117,7 @@ public class ToyStore
 		
 		}
 		
-		System.out.println("Check3");
+		//System.out.println("Check3");
 		
 		return name;
 		
@@ -111,13 +132,15 @@ public class ToyStore
 		for(Toy y : toyList)
 		{
 			
-			if(y.getType() == "Car")
+			String checker = y.getType();
+			
+			if(checker.equals("Car"))
 			{
 				
 				cars += 1;
 			}
 			
-			if(y.getType() == "AF")
+			if(checker.equals("AF"))
 			{
 				
 				figures += 1;
@@ -125,20 +148,23 @@ public class ToyStore
 			
 		}
 		
+		//System.out.println(cars);
+		//System.out.println(figures);
+		
 		if(cars > figures)
 		{
-			System.out.println("Check4");
+			//System.out.println("Check4");
 			
-			return "Cars";
+			return "Most Frequent Type of Toy: Cars";
 		}
 		if(figures > cars)
 		{
-			System.out.println("Check4");
+			//System.out.println("Check4");
 			
-			return "Action Figures";
+			return "Most Frequent Type of Toy: Action Figures";
 		}
 		
-		System.out.println("Check4");
+		//System.out.println("Check4");
 		
 		return "Equal amounts of action figures and cars";
 		
@@ -146,6 +172,6 @@ public class ToyStore
 	public String toString()
 	{
 		
-		return "" + toyList;
+		return "" + toyList + "";
 	}
 }	
