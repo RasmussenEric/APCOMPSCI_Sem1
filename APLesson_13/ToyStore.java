@@ -3,96 +3,62 @@ import java.util.Arrays;
 
 public class ToyStore
 {
-	
-	ArrayList<Toy> toyList = new ArrayList<Toy>();
+	ArrayList<Toy> toyList;
 	
 	public ToyStore()
 	{
-		
-		
+		toyList = new ArrayList<Toy>();
 	}
 	
 	public ToyStore(String list)
 	{
-		
 		loadToys(list);
 	}
 	
 	public void loadToys(String ts)
 	{
-		String[] ar = ts.split(",");
-		ArrayList<String> toys = new ArrayList<String>(Arrays.asList(ar));
-		//System.out.println("Check1");
-		//System.out.println(toys.size());
-
-		for(int i = 0; i < (toys.size() - 1) ; i += 2)
+		toyList = new ArrayList<Toy>();
+		ArrayList<String> toys = new ArrayList<>(Arrays.asList(ts.split(", ")));
+		//System.out.println(toys);
+		for(int i = 0; i < toys.size(); i += 2)
 		{
-			
 			String name = toys.get(i);
 			String type = toys.get(i + 1);
 			
-			//System.out.println(type);
-			
 			Toy num = getThatToy(name);
 			
-			if(getThatToy(name) == null)
+			if(num == null)
 			{
 				
 				if(type.equals("Car"))
 				{
-					
-					toys.add("Car");
-					System.out.println("Car");
-					
+					toyList.add(new Car(name));
 				}
 				
 				if(type.equals("AF"))
 				{
-					toys.add("AF");
-					System.out.println("AF");
-					
+					toyList.add(new AFigure(name));
 				}
-				//System.out.println("Check loop");
+				
 			}
 			else
 			{
-				int c = num.getCount();
-			
-				c += 1;	
-				
-				num.setCount(c);
+				num.setCount(num.getCount()+1);
 			}
-			
-			//System.out.println("Done Loading");
+			//System.out.println(toyList);
 		}	
 	}
 	
 	public Toy getThatToy(String nm)
 	{
-		
-		String test = nm;
-		
-		//System.out.println(test);
-		
-		//System.out.println(toyList.size());
-		
+		//System.out.println(toyList);
 		for(Toy t : toyList)
 		{
-			
-			String Checker = t.getName();
-			System.out.println(Checker);
-			System.out.println(test);
-			
-			if(Checker == test)
+			if(t.getName().equals(nm))
 			{
-				System.out.println("Check t");
 				return t;
-			}
-			
-			
+			}		
 		}
-		
-		//System.out.println("Check null");
 		return null;
 	}
 	
@@ -117,8 +83,6 @@ public class ToyStore
 		
 		}
 		
-		//System.out.println("Check3");
-		
 		return name;
 		
 	}
@@ -140,33 +104,26 @@ public class ToyStore
 				cars += 1;
 			}
 			
-			if(checker.equals("AF"))
+			if(checker.equals("Action Figure"))
 			{
 				
 				figures += 1;
 			}
 			
 		}
-		
-		//System.out.println(cars);
-		//System.out.println(figures);
-		
+
 		if(cars > figures)
 		{
-			//System.out.println("Check4");
 			
 			return "Most Frequent Type of Toy: Cars";
 		}
 		if(figures > cars)
 		{
-			//System.out.println("Check4");
 			
 			return "Most Frequent Type of Toy: Action Figures";
 		}
 		
-		//System.out.println("Check4");
-		
-		return "Equal amounts of action figures and cars";
+		return "Equal amounts of Action Figures and Cars";
 		
 	}
 	public String toString()

@@ -21,12 +21,20 @@ public class Magpie2
 		 * 	if you enter nothing, or if you accidentally hit
 		 * 	enter. Think to yourself: "What is the length of
 		 * 	an empty String?" */
-
-
+		
+		if(statement.length() == 0)
+		{
+			response = "Say something, please.";
+			return response;
+		}
+		
+		
 		/** To be completed in Exercise_02:
 		 * 	Modify the following code to use the findKeyword
 		 * 	Method (details in "Exercise_02" below. */
-		if (statement.indexOf("no") >= 0)
+		String goal = "no";
+		int startpos = 0;
+		if (findKeyword(statement, goal, startpos) == 1)
 		{
 			response = "Why so negative?";
 		}
@@ -61,6 +69,37 @@ public class Magpie2
 	 * ========================================================= */
 	private int findKeyword(String statement, String goal, int startPos)
 	{
+		
+		String phrase = statement.trim();
+		phrase = phrase.toLowerCase();
+		
+		int psn = phrase.indexOf(goal, startPos);
+		String before = "";
+		String after = "";
+		
+		while(psn >= 0)
+		{
+			if(psn > 0)
+			{
+				before = phrase.substring(0, psn - 1);
+			}
+			if(goal.length() > phrase.length())
+			{
+				after = phrase.substring(psn + goal.length(), phrase.length());
+			}
+			if((before.length() > 1) && (after.length() > 1))
+			{
+				return psn;
+			}
+			else
+			{
+				psn = phrase.indexOf(goal, psn + 1);
+			}
+		}
+		
+		
+		
+		
 		/* New String variable phrase = a more searchable version of statement.
 		 	-Use a combination of trim() and toLowerCase() modify statement.
 

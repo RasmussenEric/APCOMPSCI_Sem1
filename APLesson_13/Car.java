@@ -14,43 +14,21 @@ public class Car extends Toy
 	
 	public Car(String n)
 	{
-		
 		super(n);
-	}
-	
-	public String getName()
-	{
-	
-		return name;
-	}
-	
-	public int getCount()
-	{
-		
-		return count;
 	}
 	
 	public void setName(String n)
 	{
-		
-		name = n;
+		super.setName(n);
 	}
 	
 	public void setCount(int c)
 	{
-		
-		count = c;
+		super.setCount(c);
 	}
 	
 	public String getType()
 	{
-		
-		return "Car";
-	}
-	
-	public String toString()
-	{
-		
 		return "Car";
 	}
 }
