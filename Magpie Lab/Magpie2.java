@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Magpie2
 {
 	/** Get a default greeting @return a greeting*/
@@ -32,17 +34,17 @@ public class Magpie2
 		/** To be completed in Exercise_02:
 		 * 	Modify the following code to use the findKeyword
 		 * 	Method (details in "Exercise_02" below. */
-		String goal = "no";
-		int startpos = 0;
-		if (findKeyword(statement, goal, startpos) == 1)
+
+		//System.out.println(findKeyword(statement, goal));
+		if (findKeyword(statement, "no", 0) == 0)
 		{
 			response = "Why so negative?";
 		}
 
-		else if (statement.indexOf("mother") >= 0
-				|| statement.indexOf("father") >= 0
-				|| statement.indexOf("sister") >= 0
-				|| statement.indexOf("brother") >= 0)
+		else if (findKeyword(statement, "mother", 0) == 0
+				|| findKeyword(statement, "father", 0) == 0
+				|| findKeyword(statement, "sister", 0) == 0
+				|| findKeyword(statement, "brother", 0) == 0)
 		{
 			response = "Tell me more about your family.";
 		}
@@ -74,29 +76,55 @@ public class Magpie2
 		phrase = phrase.toLowerCase();
 		
 		int psn = phrase.indexOf(goal, startPos);
+		//System.out.println(psn);
 		String before = "";
 		String after = "";
 		
 		while(psn >= 0)
 		{
+			
+			//System.out.println(psn);
+			
 			if(psn > 0)
 			{
-				before = phrase.substring(0, psn - 1);
+				 before = phrase.substring(0, psn);
+				//System.out.println("Before: " + before);
 			}
-			if(goal.length() > phrase.length())
+			if(goal.length() < phrase.length())
 			{
+				//System.out.println("psn: " + psn);
+				//System.out.println("goal: " + goal);
+				//System.out.println("phrase: " + phrase);
 				after = phrase.substring(psn + goal.length(), phrase.length());
+				//System.out.println("After: " + after);
 			}
-			if((before.length() > 1) && (after.length() > 1))
+			//System.out.println("Before: " + before.length());
+			//System.out.println("After: " + after.length());
+			if((before.length() == 0) && (after.length() == 0))
 			{
+				//System.out.println("RETURN" + psn);
 				return psn;
 			}
 			else
 			{
-				psn = phrase.indexOf(goal, psn + 1);
+				//psn += 1;
+				return -1;
 			}
 		}
 		
+		
+		//my own version
+		
+		String[] words = phrase.split(" ");
+		
+		for(int i = 0; i <= words.length;i++)
+		{
+			if(words[i].equals(goal))
+			{
+				return 1;
+			}
+			
+		}
 		
 		
 		
