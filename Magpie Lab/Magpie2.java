@@ -17,53 +17,44 @@ public class Magpie2
 	{
 		String response = "";
 
-		/** Exercise_01:
-		 * ==================================================
-		 * 	Code that asks the user "Say something, please."
-		 * 	if you enter nothing, or if you accidentally hit
-		 * 	enter. Think to yourself: "What is the length of
-		 * 	an empty String?" */
-		
 		if(statement.length() == 0)
 		{
 			response = "Say something, please.";
 			return response;
 		}
 		
-		
-		/** To be completed in Exercise_02:
-		 * 	Modify the following code to use the findKeyword
-		 * 	Method (details in "Exercise_02" below. */
-
-		//System.out.println(findKeyword(statement, goal));
-		if (findKeyword(statement, "no", 0) == 0)
+		if (findKeyword(statement, "no", 0) >= 0)
 		{
 			response = "Why so negative?";
 		}
 
-		else if (findKeyword(statement, "mother", 0) == 0
-				|| findKeyword(statement, "father", 0) == 0
-				|| findKeyword(statement, "sister", 0) == 0
-				|| findKeyword(statement, "brother", 0) == 0)
+		else if (findKeyword(statement, "mother", 0) >= 0
+				|| findKeyword(statement, "father", 0) >= 0
+				|| findKeyword(statement, "sister", 0) >= 0
+				|| findKeyword(statement, "brother", 0) >= 0)
 		{
 			response = "Tell me more about your family.";
 		}
-
-		/** Exercise_03(Final)
-		 * ==================================================
-		 * Create additional code (another else if) that
-		 * responds "Tell me more about your pet" if the
-		 * user mentions the word cat, dog, fish, or turtle
-		 * in their statement.
-		 *
-		 * Create addtional code (another else if) that
-		 * responds "He sounds like a pretty dank teacher"
-		 * if you mention "Robinette" in your statement */
-
+		
+		else if (findKeyword(statement, "cat", 0) >= 0
+				|| findKeyword(statement, "dog", 0) >= 0
+				|| findKeyword(statement, "fish", 0) >= 0
+				|| findKeyword(statement, "turtle", 0) >= 0)
+		{
+			response = "Tell me more about your pet.";
+		}
+	
+		
+		else if(findKeyword(statement, "Robinette", 0) >= 0)
+		{
+			response = "He sounds like a pretty dank teacher.";
+		}
+		
 		else
 		{
 			response = getRandomResponse();
 		}
+		
 		return response;
 	}
 
@@ -74,59 +65,49 @@ public class Magpie2
 		
 		String phrase = statement.trim();
 		phrase = phrase.toLowerCase();
+		goal = goal.toLowerCase();
+		
 		
 		int psn = phrase.indexOf(goal, startPos);
-		//System.out.println(psn);
 		String before = "";
 		String after = "";
 		
-		while(psn >= 0)
+		
+		//My Way
+		
+		String[] test = phrase.split(" ");
+		
+		for(int i = 0; i < test.length; i++)
 		{
 			
-			//System.out.println(psn);
-			
-			if(psn > 0)
+			if(test[i].equals(goal))
 			{
-				 before = phrase.substring(0, psn);
-				//System.out.println("Before: " + before);
-			}
-			if(goal.length() < phrase.length())
-			{
-				//System.out.println("psn: " + psn);
-				//System.out.println("goal: " + goal);
-				//System.out.println("phrase: " + phrase);
-				after = phrase.substring(psn + goal.length(), phrase.length());
-				//System.out.println("After: " + after);
-			}
-			//System.out.println("Before: " + before.length());
-			//System.out.println("After: " + after.length());
-			if((before.length() == 0) && (after.length() == 0))
-			{
-				//System.out.println("RETURN" + psn);
-				return psn;
-			}
-			else
-			{
-				//psn += 1;
-				return -1;
-			}
-		}
-		
-		
-		//my own version
-		
-		String[] words = phrase.split(" ");
-		
-		for(int i = 0; i <= words.length;i++)
-		{
-			if(words[i].equals(goal))
-			{
-				return 1;
+				return 0;
 			}
 			
 		}
 		
 		
+		//Correct Way
+		
+		//while(psn >= 0)
+		{
+			
+	    	//if(psn > 0)
+			{
+				//before = phrase.substring(psn - 1, psn);
+			}
+			//if(psn + goal.length() < phrase.length())
+			{
+				//after = phrase.substring(psn + goal.length(), psn + goal.length() + 1);
+			}
+			//if(((before.compareTo("a") < 0) || (before.compareTo("z") > 0)) && ((after.compareTo("a") < 0) || (after.compareTo("z") > 0)))
+			{
+				//return psn;
+			}
+			
+			//psn = phrase.indexOf(goal, psn + 1);
+		}
 		
 		/* New String variable phrase = a more searchable version of statement.
 		 	-Use a combination of trim() and toLowerCase() modify statement.
@@ -157,6 +138,7 @@ public class Magpie2
 
 				Otherwise, search for goal in phrase from psn + 1 forward */
 
+		
 		return -1;
 
 	}
