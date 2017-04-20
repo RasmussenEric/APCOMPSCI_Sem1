@@ -17,29 +17,69 @@ public class PictureTester
     beach.explore();
   }
   
-  public static void testKeepOnlyBlue()
-  {
-	Picture beach = new Picture("beach.jpg");
-    beach.explore();
-    beach.KeepOnlyBlue();
-    beach.explore();
-  }
+	public static void testKeepOnlyBlue()
+	{
+		Picture beach = new Picture("beach.jpg");
+		beach.explore();
+		beach.KeepOnlyBlue();
+		beach.explore();
+	}
+	
+	public static void testNegate()
+	{
+		
+		Picture beach = new Picture("beach.jpg");
+		beach.explore();
+		beach.Negate();
+		beach.explore();
+		
+	}
+	
+	public static void testGrayscale()
+	{
+		
+		Picture beach = new Picture("beach.jpg");
+		beach.explore();
+		beach.Grayscale();
+		beach.explore();
+		
+	}
+	
+	public static void testFixUnderwater()
+	{
+		
+		Picture underwater = new Picture("water.jpg");
+		underwater.explore();
+		underwater.FixUnderwater();
+		underwater.explore();
+		
+	}
   
   /** Method to test mirrorVertical */
   public static void testMirrorVertical()
   {
     Picture caterpillar = new Picture("caterpillar.jpg");
     caterpillar.explore();
-    caterpillar.mirrorVertical();
+    caterpillar.MirrorVertical();
     caterpillar.explore();
   }
+  
+	public static void testMirrorRightToLeft()
+	{
+		
+		Picture snek = new Picture("snake.jpg");
+		snek.explore();
+		snek.MirrorRightToLeft();
+		snek.explore();
+		
+	}
   
   /** Method to test mirrorTemple */
   public static void testMirrorTemple()
   {
     Picture temple = new Picture("temple.jpg");
     temple.explore();
-    temple.mirrorTemple();
+    temple.MirrorTemple();
     temple.explore();
   }
   
@@ -67,15 +107,14 @@ public class PictureTester
     // and comment out the ones you don't want
     // to run
     //testZeroBlue();
-    testKeepOnlyBlue();
+    //testKeepOnlyBlue();
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
     //testNegate();
-    //testGrayscale();
+	//testGrayscale();
     //testFixUnderwater();
     //testMirrorVertical();
-    //testMirrorTemple();
-    //testMirrorArms();
+	testMirrorRightToLeft();
     //testMirrorGull();
     //testMirrorDiagonal();
     //testCollage();
