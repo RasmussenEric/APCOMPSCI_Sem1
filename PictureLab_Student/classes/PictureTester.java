@@ -67,11 +67,27 @@ public class PictureTester
 	public static void testMirrorRightToLeft()
 	{
 		
-		Picture snek = new Picture("snake.jpg");
-		snek.explore();
-		snek.MirrorRightToLeft();
-		snek.explore();
+		Picture cycle = new Picture("redMotorcycle.jpg");
+		cycle.explore();
+		cycle.MirrorRightToLeft();
+		cycle.explore();
 		
+	}
+	
+	public static void testMirrorHorizontal()
+	{
+		Picture cycle = new Picture("redMotorcycle.jpg");
+		cycle.explore();
+		cycle.MirrorHorizontal();
+		cycle.explore();
+	}
+	
+	public static void testMirrorBottomToTop()
+	{
+		Picture cycle = new Picture("redMotorcycle.jpg");
+		cycle.explore();
+		cycle.MirrorBottomToTop();
+		cycle.explore();
 	}
   
   /** Method to test mirrorTemple */
@@ -82,6 +98,14 @@ public class PictureTester
     temple.MirrorTemple();
     temple.explore();
   }
+  
+	public static void testMirrorArms()
+	{
+		Picture snowman = new Picture("snowman.jpg");
+		snowman.explore();
+		snowman.MirrorArms();
+		snowman.explore();
+	}
   
   /** Method to test the collage method */
   public static void testCollage()
@@ -114,7 +138,11 @@ public class PictureTester
 	//testGrayscale();
     //testFixUnderwater();
     //testMirrorVertical();
-	testMirrorRightToLeft();
+	//testMirrorRightToLeft();
+	//testMirrorHorizontal();
+	//testMirrorBottomToTop();
+	testMirrorTemple();
+	testMirrorArms();
     //testMirrorGull();
     //testMirrorDiagonal();
     //testCollage();
