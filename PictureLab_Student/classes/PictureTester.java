@@ -25,6 +25,14 @@ public class PictureTester
 		beach.explore();
 	}
 	
+	public static void testKeepOnlyRed()
+	{
+		Picture beach = new Picture("beach.jpg");
+		beach.explore();
+		beach.KeepOnlyRed();
+		beach.explore();
+	}
+	
 	public static void testNegate()
 	{
 		
@@ -106,6 +114,14 @@ public class PictureTester
 		snowman.MirrorArms();
 		snowman.explore();
 	}
+	
+	public static void testMirrorGull()
+	{
+		Picture gull = new Picture("seagull.jpg");
+		gull.explore();
+		gull.MirrorGull();
+		gull.explore();
+	}
   
   /** Method to test the collage method */
   public static void testCollage()
@@ -114,6 +130,14 @@ public class PictureTester
     canvas.createCollage();
     canvas.explore();
   }
+  
+	public static void testMyCollage()
+	{
+		Picture canvas = new Picture("640x480.jpg");
+		canvas.MyCollage();
+		canvas.explore();
+		
+	}
   
   /** Method to test edgeDetection */
   public static void testEdgeDetection()
@@ -141,11 +165,12 @@ public class PictureTester
 	//testMirrorRightToLeft();
 	//testMirrorHorizontal();
 	//testMirrorBottomToTop();
-	testMirrorTemple();
-	testMirrorArms();
+	//testMirrorTemple();
+	//testMirrorArms();
     //testMirrorGull();
     //testMirrorDiagonal();
     //testCollage();
+	testMyCollage();
     //testCopy();
     //testEdgeDetection();
     //testEdgeDetection2();

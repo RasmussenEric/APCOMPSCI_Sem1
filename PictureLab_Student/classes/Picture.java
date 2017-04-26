@@ -113,6 +113,21 @@ public class Picture extends SimplePicture
 		
 	}
 	
+	public void KeepOnlyRed()
+	{
+		Pixel[][] pixels = this.getPixels2D();
+		
+		for(Pixel[] rowArray : pixels)
+		{
+			for(Pixel pixelObj : rowArray)
+			{
+				pixelObj.setBlue(0);
+				pixelObj.setGreen(0);
+			}
+		}
+		
+	}
+	
 	public void Negate()
 	{
 		
@@ -274,22 +289,42 @@ public class Picture extends SimplePicture
 	public void MirrorArms()
 	{
 		
-		int mirrorPoint = 300;
+		int mirrorPoint = 200;
 		Pixel topPixel = null;
 		Pixel bottomPixel = null;
 
 		Pixel[][] pixels = this.getPixels2D();
     
 
-		for (int row = 162; row < 223; row++)
+		for (int row = 162; row < 200; row++)
 		{
 		// loop from 13 to just before the mirror point
-			for (int col = 100; col < mirrorPoint; col++)
+			for (int col = 100; col < 300; col++)
 			{
 				
 				topPixel = pixels[row][col];      
-				bottomPixel = pixels[mirrorPoint - row + mirrorPoint][col];
+				bottomPixel = pixels[mirrorPoint + mirrorPoint - row][col];
 				bottomPixel.setColor(topPixel.getColor());
+			}
+		}
+	}
+	
+	public void MirrorGull()
+	{
+		
+		Pixel leftPixel = null;
+		Pixel rightPixel = null;
+		
+		Pixel[][] pixels = this.getPixels2D();
+		
+		for(int row = 230; row < 330; row++)
+		{
+			for(int col = 230; col <350; col++)
+			{
+				
+				leftPixel = pixels[row][col];
+				rightPixel = pixels[row + 20][col + 180];
+				rightPixel.setColor(leftPixel.getColor());
 			}
 		}
 	}
@@ -324,15 +359,35 @@ public class Picture extends SimplePicture
       }
     }   
   }
+  
+    public void copy2(Picture fromPic, int startRow, int startCol, int endRow, int endCol)
+	{
+		Pixel fromPixel = null;
+		Pixel toPixel = null;
+		Pixel[][] toPixels = this.getPixels2D();
+		Pixel[][] fromPixels = fromPic.getPixels2D();
+		
+		for (int fromRow = 0, toRow = startRow; fromRow < endRow && toRow < toPixels.length; fromRow++, toRow++)	
+		{
+			for (int fromCol = 0, toCol = startCol; fromCol < endCol && toCol < toPixels[0].length; fromCol++, toCol++)
+			{
+				fromPixel = fromPixels[fromRow][fromCol];
+				toPixel = toPixels[toRow][toCol];
+				toPixel.setColor(fromPixel.getColor());
+			}
+		}
+      
+    }   
+  
+  
 
   /** Method to create a collage of several pictures */
   public void createCollage()
   {
     Picture flower1 = new Picture("flower1.jpg");
     Picture flower2 = new Picture("flower2.jpg");
-    this.copy(flower1,0,0);
-    this.copy(flower2,100,0);
-    this.copy(flower1,200,0);
+    this.copy2(flower2,100,0,70,70);
+    this.copy2(flower1,200,0,70,70);
     Picture flowerNoBlue = new Picture(flower2);
     flowerNoBlue.zeroBlue();
     this.copy(flowerNoBlue,300,0);
@@ -342,6 +397,26 @@ public class Picture extends SimplePicture
     this.write("collage.jpg");
   }
   
+	public void MyCollage()
+	{
+		Picture snake = new Picture("snake.jpg");
+		this.copy2(snake,80,0,100,100);
+		Picture nobluesnake = new Picture("snake.jpg");
+		nobluesnake.zeroBlue();
+		this.copy2(nobluesnake,180,0,100,100);
+		Picture negasnake = new Picture("snake.jpg");
+		negasnake.Negate();
+		this.copy2(negasnake,280,0,100,100);
+		Picture weirdsnake = new Picture("snake.jpg");
+		weirdsnake.KeepOnlyRed();
+		this.copy2(weirdsnake,150,120,194,259);
+		//Picture bluesnake = new Picture("snake.jpg");
+		//bluesnake.KeepOnlyBlue();
+		//this.copy2(bluesnake,180,200,180,180);
+		this.MirrorVertical();
+		this.write("collage.jpg");
+		
+	}
   
   /** Method to show large changes in color 
     * @param edgeDist the distance for finding edges
@@ -377,10 +452,10 @@ public class Picture extends SimplePicture
    */
   public static void main(String[] args) 
   {
-    Picture snake = new Picture("snake.jpg");
-    snake.explore();
-    snake.zeroBlue();
-    snake.explore();
+    //Picture snake = new Picture("snake.jpg");
+    //snake.explore();
+    //snake.zeroBlue();
+    //snake.explore();
   }
   
 } // this } is the end of class Picture, put all new methods before this
