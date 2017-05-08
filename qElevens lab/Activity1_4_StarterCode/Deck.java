@@ -1,5 +1,6 @@
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * The Deck class represents a shuffled deck of cards.
@@ -32,20 +33,22 @@ public class Deck {
 	public Deck(String[] ranks, String[] suits, int[] values) 
 	{
 		
-		Arraylist<String> rank = new Arraylist<>(Arrays.aslist(ranks));
-		Arraylist<String> suit = new Arraylist<>(Arrays.aslist(suits));
-		Arraylist<int> value = new Arraylist<>(Arrays.aslist(values));
+		//ArrayList<String> rank = new ArrayList<>(Arrays.asList(ranks));
+		//ArrayList<String> suit = new ArrayList<>(Arrays.asList(suits));
+		//ArrayList<Integer> value = new ArrayList<>(Arrays.asList(values));
+		int count = 0;
 		
-		for(int r = 0; r < rank.length; r++)
+		for(int r = 0; r < ranks.length; r++)
 		{
-			for(int s = 0; s < suit.length; s++)
+			for(int s = 0; s < suits.length; s++)
 			{
-				for(int v = 0; v < value.length; v++)
+				for(int v = 0; v < values.length; v++)
 				{
 					
-					Card next = new Card(rank[r], suit[s], value[v]);
+					Card next = new Card(ranks[r], suits[s], values[v]);
 					
 					cards.add(next);
+					count++;
 					
 				}
 				
@@ -53,7 +56,8 @@ public class Deck {
 			
 		}
 		
-		size = cards.length;
+	
+		size = count;
 		
 		//shuffle(cards);
 		
@@ -66,7 +70,7 @@ public class Deck {
 	 */
 	public boolean isEmpty() 
 	{
-		if(cards.length == 0)
+		if(size() == 0 || size() == -1)
 		{
 			return true;
 		}
@@ -100,18 +104,16 @@ public class Deck {
 	 */
 	public Card deal() 
 	{
-		size = size();
-		size = size - 1;
+		//size = size();
+		size = size() - 1;
 		
-		Card drawn = new Card(cards[size]);
-	
-		
-		
-		if(size == 0)
+		if(size == -1)
 		{
 			return null;
 		}
 		
+		Card drawn = cards.get(size());
+
 		return drawn;
 		
 	}

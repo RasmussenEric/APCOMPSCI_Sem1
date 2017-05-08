@@ -38,10 +38,6 @@ public class Card {
 		rank = cardRank;
 		pointValue = cardPointValue;
 		
-		
-		
-		
-		
 	}
 
 
