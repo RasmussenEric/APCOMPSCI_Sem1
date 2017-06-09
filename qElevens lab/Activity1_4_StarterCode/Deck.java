@@ -38,6 +38,8 @@ public class Deck {
 		//ArrayList<Integer> value = new ArrayList<>(Arrays.asList(values));
 		int count = 0;
 		
+		cards = new ArrayList<>();
+		
 		for(int r = 0; r < ranks.length; r++)
 		{
 			for(int s = 0; s < suits.length; s++)
@@ -48,15 +50,14 @@ public class Deck {
 					Card next = new Card(ranks[r], suits[s], values[v]);
 					
 					cards.add(next);
-					count++;
 					
+					count++;
 				}
 				
 			}
 			
 		}
 		
-	
 		size = count;
 		
 		//shuffle(cards);
